@@ -107,11 +107,11 @@ Conclusion
 This project demonstrates how artificial intelligence and monitoring tools can be combined to create a proactive predictive monitoring system. It improves system reliability, reduces downtime, and provides better resource management.
 
 Authors
-Sri Vishnu
-R RAM
-RAGHU V
-SACHIN ACHARYA
-RAJASEKAR G
+Sri Vishnu YS,
+R RAM,
+RAGHU V,
+SACHIN ACHARYA,
+RAJASEKAR G.
 
 Internship Project
 Predictive System Monitoring
