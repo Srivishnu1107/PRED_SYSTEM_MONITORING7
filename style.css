@@ -1,0 +1,92 @@
+body{
+    margin:0;
+    font-family:Segoe UI, sans-serif;
+    background:#0b1220;
+    color:white;
+    overflow:hidden;
+}
+
+/* ===== TITLE ===== */
+h1{
+    text-align:center;
+    font-size:26px;
+    font-weight:700;
+    margin:8px 0;
+}
+
+/* ===== TOP CARDS ===== */
+.cards{
+    display:grid;
+    grid-template-columns: repeat(5,1fr);
+    gap:12px;
+    padding:10px 20px;
+}
+
+.card{
+    padding:12px;
+    border-radius:10px;
+    text-align:center;
+    font-weight:700;
+    font-size:16px;
+}
+
+.cpu{background:#2f6df6;}
+.ram{background:#19a34a;}
+.disk{background:#f0b90b;}
+.gpu{background:#7c3aed;}
+.net{background:#0891b2;}
+
+
+/* ===== GRID ===== */
+.grid{
+    height: calc(100vh - 150px);
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap:14px;
+    padding:12px 20px;
+}
+
+/* ===== BOX ===== */
+.box{
+    background:#111a2e;
+    border-radius:14px;
+    padding:14px;
+    display:flex;
+    flex-direction:column;
+}
+
+/* 🔥 BIG CLEAR TITLES */
+.box h3{
+    font-size:20px;
+    font-weight:700;
+    margin-bottom:10px;
+    text-align:center;
+    letter-spacing:0.5px;
+}
+
+/* chart area same height */
+canvas{
+    flex:1;
+}
+
+
+/* ===== TEMPERATURE ===== */
+.tempBox{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+}
+
+/* smaller donut */
+#tempChart{
+    width:220px !important;
+    height:220px !important;
+}
+
+.tempValue{
+    position:absolute;
+    font-size:34px;
+    font-weight:800;
+}

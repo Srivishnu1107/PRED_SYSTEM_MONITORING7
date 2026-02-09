@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI Predictive Monitoring</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Segoe UI;
+    background:#0b1320;
+    color:white;
+    overflow-y:auto;
+}
+
+/* TITLE */
+.mainTitle{
+    text-align:center;
+    font-size:42px;
+    font-weight:900;
+    padding:20px;
+}
+
+/* METRICS */
+.metrics{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:10px;
+    padding:10px;
+}
+.box{
+    padding:12px;
+    border-radius:10px;
+    font-weight:bold;
+    text-align:center;
+}
+.cpu{background:#2d6cdf;}
+.ram{background:#22c55e;}
+.disk{background:#eab308;}
+.gpu{background:#8b5cf6;}
+.net{background:#06b6d4;}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:2fr 2fr 1.2fr;
+    gap:12px;
+    padding:12px;
+}
+
+/* CARDS */
+.card{
+    background:#111c2f;
+    border-radius:12px;
+    padding:12px;
+}
+.title{
+    font-size:20px;
+    font-weight:700;
+    margin-bottom:8px;
+}
+
+canvas{ height:260px !important; }
+
+/* AI PANEL */
+.aiPanel{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.aiBox{
+    background:#1e293b;
+    padding:10px;
+    border-radius:8px;
+}
+
+.status{
+    padding:6px;
+    border-radius:6px;
+    text-align:center;
+    font-weight:bold;
+}
+.green{background:#22c55e;}
+.yellow{background:#eab308;}
+.red{background:#ef4444;}
+
+.calendar{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    gap:4px;
+}
+.day{
+    background:#1f2937;
+    padding:6px;
+    border-radius:4px;
+    font-size:12px;
+    text-align:center;
+}
+.day.good{background:#22c55e;}
+.day.warn{background:#eab308;}
+.day.bad{background:#ef4444;}
+
+</style>
+</head>
+
+<body>
+
+<div class="mainTitle"> AI Predictive System Monitoring</div>
+
+<div class="metrics">
+<div class="box cpu" id="cpuBox">CPU</div>
+<div class="box ram" id="ramBox">RAM</div>
+<div class="box disk" id="diskBox">Disk</div>
+<div class="box gpu" id="gpuBox">GPU</div>
+<div class="box net" id="netBox">Network</div>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<div class="title">CPU Usage (%)</div>
+<canvas id="cpuChart"></canvas>
+</div>
+
+<div class="card">
+<div class="title">RAM Usage (%)</div>
+<canvas id="ramChart"></canvas>
+</div>
+
+<div class="aiPanel">
+
+<div class="aiBox">
+<b>System Health</b>
+<div id="healthBar" style="height:20px;background:#22c55e;margin-top:6px;border-radius:6px"></div>
+<div id="healthText"></div>
+</div>
+
+<div class="aiBox">
+<b>AI Suggestions</b>
+<div id="suggestions"></div>
+</div>
+
+<div class="aiBox">
+<b>30 Day Forecast</b>
+<div class="calendar" id="calendar"></div>
+</div>
+
+<div class="aiBox">
+<button onclick="voice()">🎤 Speak</button>
+</div>
+
+<div class="aiBox">
+<input id="msg">
+<button onclick="ask()">Ask</button>
+<div id="reply"></div>
+</div>
+
+</div>
+
+<div class="card">
+<div class="title">Disk Usage (%)</div>
+<canvas id="diskChart"></canvas>
+</div>
+
+<div class="card">
+<div class="title">GPU Usage (%)</div>
+<canvas id="gpuChart"></canvas>
+</div>
+
+<div class="card">
+<div class="title">Temperature</div>
+<div style="position:relative;height:260px">
+<canvas id="tempChart"></canvas>
+<div id="tempValue" style="position:absolute;top:45%;left:45%;font-size:30px;font-weight:900"></div>
+</div>
+</div>
+
+</div>
+
+<script src="/static/dashboard.js"></script>
+</body>
+</html>
